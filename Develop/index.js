@@ -1,4 +1,4 @@
-const axios = require("axios");
+//const axios = require("axios");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
@@ -17,11 +17,11 @@ function questionsPrompt() {
             name: "description",
             message: "Write a brief description of your application."
         },
-        {
-            type: "input",
-            name: "contents",
-            message: "List out the table of contents, separated by periods(.)"
-        },
+        // {
+        //     type: "input",
+        //     name: "contents",
+        //     message: "List out the table of contents, separated by periods(.)"
+        // },
         {
             type: "input",
             name: "installation",
@@ -56,10 +56,49 @@ function questionsPrompt() {
 }
 
 function writeToFile(fileName, data) {
+
+    const readMeInfo = `
+    # ${data.title}
+    ## Description
+    ${data.description}
+    
+    ## Table of Contents
+     - Installation
+     - Usage
+     - License
+     - Contributors
+     - Tests
+
+    ##Installation
+    ${installation}
+    
+    ## Usage
+    ${data.usage}
+    
+    ## License
+    ${data.license}
+    
+    ## Contributors
+    ${data.contributors}
+    
+    ## Tests
+    ${data.test}`;
+    
+    fs.writeFile(fileName, readMeInfo, "utf8");
 }
 
-function init() {
+async function init() {
+    console.log("Let's make a README!")
+    try {
+        const data = await questionsPrompt();
+        
+        writeToFile("README.md", data);
 
+        //await fs.writeFileAsync("README.md", readMeInfo, "utf8");
+        console.log("Your README is complete!");
+    } catch(error) {
+        console.log(error);
+    }
 }
 
 init();
