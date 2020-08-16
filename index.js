@@ -66,7 +66,7 @@ ${data.description}
 - Tests
 - Questions
 
-##Installation
+## Installation
 ${data.install}
 
 ## Usage
