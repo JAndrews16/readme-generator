@@ -7,8 +7,18 @@ function questionsPrompt() {
     return inquirer.prompt([
     {
         type: "input",
+        name: "questions",
+        message: "Type in your gitHub username."
+    },
+    {
+        type: "input",
+        name: "repo",
+        message: "Which repository is this for?"
+    },
+    {
+        type: "input",
         name: "title",
-        message: "What is the title of your repository?"
+        message: "What is the title of your project?"
     },
     {
         type: "input",
@@ -39,11 +49,6 @@ function questionsPrompt() {
         type: "input",
         name: "test",
         message: "Describe tests run for this application."
-    },
-    {
-        type: "input",
-        name: "questions",
-        message: "Type in your gitHub username."
     }
 ])};
 
@@ -93,9 +98,18 @@ function appendToFile (username) {
 
     axios.get(queryURL).then(function(response){
         //console.log(response);
-        const avatar = `![github avatar](${response.data.avatar_url})`;
+        const avatar = `\n![github avatar](${response.data.avatar_url})\n`;
 
         fs.appendFile("README.md", avatar, function(error){
+            if(error) {
+                throw error;
+            }
+        });
+
+        const followerBadge = `https://img.shields.io/github/followers/${username}?color=blue&style=social`;
+        const addBadge = `\n![github follower badge](${followerBadge})\n`;
+
+        fs.appendFile("README.md", addBadge, function(error){
             if(error) {
                 throw error;
             }
