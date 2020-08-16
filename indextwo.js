@@ -1,7 +1,7 @@
-//const axios = require("axios");
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require("util");
+//const util = require("util");
+const axios = require("axios");
 
 function questionsPrompt() {
     return inquirer.prompt([
@@ -60,6 +60,7 @@ ${data.description}
 - License
 - Contributors
 - Tests
+- Questions
 
 ##Installation
 ${data.install}
@@ -74,7 +75,11 @@ ${data.license}
 ${data.contributors}
 
 ## Tests
-${data.test}`;
+${data.test}
+
+## Questions
+GitHub Username: ${data.questions}
+`;
 
         fs.writeFile(fileName, readMeInfo, function(error){
             if(error) {
@@ -84,10 +89,20 @@ ${data.test}`;
         });
 }
 
+function appendToFile (username) {
+    const queryURL = `https://github.com/${username}`;
+
+    axios.get(queryURL).then(function(response){
+        console.log(response);
+    });
+}
+
 async function init() {
     const questions = await questionsPrompt();
 
     writeToFile("README.md", questions);
+
+    appendToFile(questions.questions);
 }
 
 init();
