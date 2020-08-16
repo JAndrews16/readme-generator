@@ -89,11 +89,11 @@ GitHub Username: ${data.questions}
 }
 
 function appendToFile (username) {
-    const queryURL = `https://github.com/${username}`;
+    const queryURL = `https://api.github.com/users/${username}`;
 
     axios.get(queryURL).then(function(response){
-        //console.log(response.data.avatar_url);
-        const avatar = response.data.avatar_url;
+        console.log(response);
+        const avatar = `![github avatar](${response.data.avatar_url})`;
 
         fs.appendFile("README.md", avatar, function(error){
             if(error) {

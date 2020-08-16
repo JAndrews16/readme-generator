@@ -1,7 +1,7 @@
-# Title of it
+# title
 
 ## Description
-describing it
+makei
 
 ## Table of Contents
 - Installation
@@ -12,20 +12,20 @@ describing it
 - Questions
 
 ##Installation
-something
+it 
 
 ## Usage
-salt
+work
 
 ## License
-in fo fun
+oea
 
 ## Contributors
-co pilot
+please
 
 ## Tests
-kona is a cutie
+test it
 
 ## Questions
 GitHub Username: jandrews16
-undefined
+![github avatar](https://avatars3.githubusercontent.com/u/64562140?v=4)
