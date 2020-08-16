@@ -1,7 +1,7 @@
-# title
+# title it
 
 ## Description
-makei
+soemthing
 
 ## Table of Contents
 - Installation
@@ -12,20 +12,21 @@ makei
 - Questions
 
 ##Installation
-it 
+dog 
 
 ## Usage
-work
+kona is cute
 
 ## License
-oea
+so cool
 
 ## Contributors
-please
+lets make a repo
 
 ## Tests
-test it
+jan
 
 ## Questions
 GitHub Username: jandrews16
+
 ![github avatar](https://avatars3.githubusercontent.com/u/64562140?v=4)
