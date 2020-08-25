@@ -3,7 +3,7 @@
 ## Description
 This application generates README files given a series of prompts for the user to input their project specific information. Simply run the index.js file in the VS Code terminal and the prompts will begin. The README file will be saved into the folder that the index file is running from.
 
-[![Application Demo](https://drive.google.com/file/d/1oZR5iL2cgbNkLLPHE7eQ0zSKJUrb2uMW/view)](https://drive.google.com/file/d/1oZR5iL2cgbNkLLPHE7eQ0zSKJUrb2uMW/view)
+![Application Demo](./assets/demo.gif)
 
 ## Table of Contents
 - [Installation](#Installation)
