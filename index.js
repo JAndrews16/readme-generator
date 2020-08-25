@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-//const util = require("util");
 const axios = require("axios");
 
 function questionsPrompt() {
@@ -59,12 +58,12 @@ function writeToFile(fileName, data) {
 ${data.description}
 
 ## Table of Contents
-- Installation
-- Usage
-- License
-- Contributors
-- Tests
-- Questions
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Contributors](#Contributors)
+- [Tests](#Tests)
+- [Questions](#Questions)
 
 ## Installation
 ${data.install}
